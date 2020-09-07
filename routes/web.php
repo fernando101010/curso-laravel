@@ -24,3 +24,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//recebendo parâmetros pelas rotas
+Route::get('/categorias/{flag}', function($flag){
+    return "Produtos da categoria: {$flag}";
+});
+Route::get('/categoria/{flag}/posts', function($flag){
+    return "Posts da categoria: {$flag}";
+});
+
+//Recebendo parâmetros opcionais pela rota
+Route::get('/produtos/{idProduct?}', function($idProduct=''){
+    return "Protudo(s) {$idProduct}";
+});
